@@ -9,7 +9,6 @@ export default function handler(
     const { name } = req.query;
     res.status(200).json({ message: 'This is a GET request', name: `this is your name ${name}` });
   } else {
-    // Handle other HTTP methods
     res.setHeader('Allow', ['GET']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
